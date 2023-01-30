@@ -12,4 +12,4 @@ function solution(price, money, count) {
     : "난부자야!";
 }
 
-console.log(solution(3, 20, 4));
+console.log(solution(3, 40, 4));

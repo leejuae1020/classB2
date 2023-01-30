@@ -13,4 +13,4 @@ function solution(numbers) {
   return sum;
 }
 
-console.log(solution([1, 2, 3, 4, 5]));
+console.log(solution([1, 2, 3]));
