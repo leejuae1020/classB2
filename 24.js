@@ -1,12 +1,16 @@
-/* 임의의 양의 정수 n에 대해, 
-n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다.
-n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, 
-n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요.*/
+/*함수 solution은 정수 n을 매개변수로 입력받습니다. 
+ n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요. 
+ 예를들어 n이 118372면 873211을 리턴하면 됩니다 */
+
+//  sort로 정렬 해주자.
 
 function solution(n) {
-  // 삼항 연산자를 이용한 풀이
-  return Math.sqrt(n) % 1 == 0 ? Math.pow(Math.sqrt(n) + 1, 2) : -1;
+  var answer = String(n)
+    .split("")
+    .sort((a, b) => b - a)
+    .join("");
+  console.log(answer);
+  return parseInt(answer);
 }
 
-//Math.sqrt(49) : 숫자 49의 제곱근을 반환한다. (7)
-//Math.pow(7, 2) : 7에 2를 제곱한 값을 반환한다 (49)
+solution(118372);

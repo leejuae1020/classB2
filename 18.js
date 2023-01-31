@@ -1,33 +1,19 @@
-/*길이가 n이고, "수박수박수박수...."와 같은 패턴을
-유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 
-예를들어 n이 4이면 "수박수박"을 리턴하고 
-3이라면 "수박수"를 리턴하면 됩니다.*/
+function solution(seoul) {
+  var answer = "";
 
-// function solution(n) {
-//   let answer = "";
-
-//   for (let i = 0; i < n; i++) {
-//     answer += i % 2 === 0 ? "수" : "박";
-//   }
-//   console.log(answer);
-//   return answer;
-// }
-
-// solution(2);
-
-////////////////////////////////////////////////
-
-function solution(n) {
-  var result = "수박";
-  result = result.repeat(n - 1).substring(0, n);
-  console.log(result);
-  return result;
+  for (i = 0; i < seoul.length; i++) {
+    if (seoul[i] === "Kim") {
+      answer = `김서방은 ${i}에 있다`;
+    }
+  }
+  return answer;
 }
 
-solution(3);
+function findKim(seoul) {
+  var idx = seoul.indexOf("Kim");
+  return "김서방은 " + idx + "에 있다";
+}
 
-////////////////////////////////////////
-
-let result = "야호";
-result = result.repeat(4 - 1).substring(0, 3);
-console.log(result);
+// indexOf는 해당 index 자체를 찾아 splice를 이용한 제거에 유리하나
+// includes는 return으로 T/F 처리에 유리
+//나는 includes를 먼저 떠올렸는데 index 자리를 찾는것이 따로있었구나 ?

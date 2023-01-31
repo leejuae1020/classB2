@@ -1,19 +1,11 @@
-function solution(seoul) {
-  var answer = "";
+/*문자열 s의 길이가 4 혹은 6이고, 
+숫자로만 구성돼있는지 확인해주는 함수, solution을 완성하세요. 
+예를 들어 s가 "a234"이면 False를 리턴하고 "1234"라면 True를 리턴하면 됩니다.*/
 
-  for (i = 0; i < seoul.length; i++) {
-    if (seoul[i] === "Kim") {
-      answer = `김서방은 ${i}에 있다`;
-    }
+function solution(s) {
+  if (s.length === 4 || s.length === 6) {
+    return s.split("").every((c) => !isNaN(c)); // 모든 요소가 number이면 true리턴
+  } else {
+    return false;
   }
-  return answer;
 }
-
-function findKim(seoul) {
-  var idx = seoul.indexOf("Kim");
-  return "김서방은 " + idx + "에 있다";
-}
-
-// indexOf는 해당 index 자체를 찾아 splice를 이용한 제거에 유리하나
-// includes는 return으로 T/F 처리에 유리
-//나는 includes를 먼저 떠올렸는데 index 자리를 찾는것이 따로있었구나 ?

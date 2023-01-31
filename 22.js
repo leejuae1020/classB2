@@ -1,14 +1,31 @@
-/* 자연수 n을 뒤집어 각 자리 숫자를 원소로 
-가지는 배열 형태로 리턴해주세요. 
-예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.*/
+/*자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
+예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.*/
+
+/*근본*/
 
 function solution(n) {
-  let arr = String(n) //문자열로 만들어주기
-    .split("") //문자열 길이 쪼개주기
-    .reverse() //reverse 뒤집기!
-    .map((a) => parseInt(a)); //쪼개진 요소들 정수로 변환하기!
+  var answer = 0;
+  var m = String(n);
 
-  console.log(arr);
+  for (let i = 0; i < m.length; i++) {
+    answer += parseInt(m[i]);
+  }
+  console.log(answer);
+  return answer;
 }
 
-solution(12345);
+solution(123);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* reduce() 사용 */
+
+function solution(n) {
+  let arr = String(n)
+    .split("")
+    .map((x) => parseInt(x));
+  return arr.reduce((acc, cur) => acc + cur, 0);
+}
+
+const result = solution(123);
+console.log(result);
