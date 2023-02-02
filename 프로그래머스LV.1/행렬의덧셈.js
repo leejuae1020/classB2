@@ -9,17 +9,17 @@ function solution(arr1, arr2) {
 //b : a의 각 요소 1,2,2,3
 //각 b에 B(2중 배열)의 각 요소를 더해주면 됨
 
-// function solution(arr1, arr2) {
-//   var answer = [];
-//   for (var i = 0; i < arr1.length; i++) {
-//     answer[i] = [];
-//     console.log(answer[i]);
-//     for (var j = 0; j < arr1[i].length; j++) {
-//       answer[i][j] = arr1[i][j] + arr2[i][j];
-//     }
-//   }
-//   return answer;
-// }
+function solution(arr1, arr2) {
+  var answer = [];
+  for (var i = 0; i < arr1.length; i++) {
+    answer[i] = [];
+    console.log(answer[i]);
+    for (var j = 0; j < arr1[i].length; j++) {
+      answer[i][j] = arr1[i][j] + arr2[i][j];
+    }
+  }
+  return answer;
+}
 
 // console.log(
 //   solution(
